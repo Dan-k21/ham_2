@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>Add product</p>
+    <input type="text" id="add">
+    <button onclick="addProduct()">Add</button>
+</div>
+<table id="displayArea" border="1"></table>
+<script>
+    let listProduct = [];
+    disPlayAll();
+    function disPlayAll() {
+        let str = '<tr>\n' +
+            '<td>Product name</td>\n' +
+            '<td></td>\n' +
+            '<td>' + listProduct.length + ' products</td>\n' +
+            '</tr>';
+        for (let i = 0; i < listProduct.length; i++) {
+            str += '<tr><td>' + listProduct[i] + '</td>' +
+                '<td><button>Edit</button></td>' +
+                '<td><button>Delete</button></td>'
+        }
+        document.getElementById('displayArea').innerHTML = str;
+    }
+    function addProduct() {
+        let productName = document.getElementById('add').value;
+        listProduct.push(productName);
+        disPlayAll()
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    function check(arr, num) {
+        let frag = false;
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (num === arr[i]) {
+                frag = true;
+                count++;
+            }
+        }
+        if (frag) {
+            return count;
+        } else {
+            return '-1';
+        }
+    }
+
+    alert(`Số 1 xuất hiện ${check([1, 5, 2, 6, 1, 1], 1)} trong mảng [1, 5, 2, 6, 1, 1]`)
+</script>
+</body>
+</html>
